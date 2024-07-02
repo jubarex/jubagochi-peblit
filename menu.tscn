@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmnamb24imfsg"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_22tg5"]
+[ext_resource type="Theme" uid="uid://d1cnbnfmrwwxq" path="res://Jubafault.tres" id="2_4dr3s"]
+[ext_resource type="AudioStream" uid="uid://ehpu324oa4i0" path="res://powerUp.wav" id="2_fq5tx"]
+[ext_resource type="Texture2D" uid="uid://dvtwemu6mhxm8" path="res://texturas/fundo.jpg" id="2_rged3"]
+[ext_resource type="AudioStream" uid="uid://q008n8bhti2r" path="res://click.wav" id="5_1y4d8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ttytp"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_wcgra"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b0eyg"]
+gradient = SubResource("Gradient_wcgra")
+
+[node name="Menu" type="Control"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_22tg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1402, 535.5)
+scale = Vector2(0.699219, 0.716797)
+texture = ExtResource("2_rged3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_ttytp")
+position = Vector2(379.645, -1072.59)
+rotation = -1.59395
+scale = Vector2(18.128, 980.585)
+texture = SubResource("GradientTexture1D_b0eyg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 29.0
+offset_top = 66.0
+offset_right = 835.0
+offset_bottom = 405.0
+theme_override_font_sizes/normal_font_size = 56
+text = "Teste texto um testando 
+"
+scroll_active = false
+scroll_following = true
+
+[node name="Clicado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fq5tx")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 455.5
+offset_right = -1076.0
+offset_bottom = -43.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15
+
+[node name="DarAguaButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("2_4dr3s")
+text = "Dar de comer"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="MarginContainer/VBoxContainer/MarginContainer/DarAguaButton"]
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15
+
+[node name="FazerCarinhoButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("2_4dr3s")
+text = "Fazer Carinho"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15
+
+[node name="LigarButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("2_4dr3s")
+text = "Ligar"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15
+
+[node name="TocarSomButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer4"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("2_4dr3s")
+text = "Tocar som"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 15
+
+[node name="QuitButton3" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer5"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("2_4dr3s")
+text = "Sair"
+
+[node name="audioBotao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1y4d8")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/DarAguaButton" to="." method="_on_start_button_pressed"]
+[connection signal="request_completed" from="MarginContainer/VBoxContainer/MarginContainer/DarAguaButton/HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/FazerCarinhoButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/LigarButton" to="." method="_on_ligar_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer4/TocarSomButton" to="." method="_on_tocar_som_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer5/QuitButton3" to="." method="_on_quit_button_pressed"]

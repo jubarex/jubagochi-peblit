@@ -1,0 +1,361 @@
+[gd_scene load_steps=44 format=3 uid="uid://cosl53b4v43f6"]
+
+[ext_resource type="Texture2D" uid="uid://dsjn1jiqamj3b" path="res://texturas/Peblit.png" id="1_7yb57"]
+[ext_resource type="Texture2D" uid="uid://h844hmkd21bh" path="res://imagens_pre_convert/PITCH_ Peblit.png" id="1_fbkjw"]
+[ext_resource type="Script" path="res://menu2.gd" id="1_udbbb"]
+[ext_resource type="FontFile" uid="uid://dprvmulbry273" path="res://fonte/minecraft/Minecraft.ttf" id="2_fh78g"]
+[ext_resource type="Texture2D" uid="uid://cj4de3i6o1agv" path="res://imagens_pre_convert/wifi-on.png" id="3_hkde8"]
+[ext_resource type="Texture2D" uid="uid://brslvh4s0dq22" path="res://texturas/texturamadeiraesc.jpg" id="3_ouy7c"]
+[ext_resource type="Texture2D" uid="uid://w0iappx352uf" path="res://botoesHeader/Planta.png" id="4_7s551"]
+[ext_resource type="Texture2D" uid="uid://qqgoixmqqis1" path="res://imagens_pre_convert/wifi-off.png" id="4_lexi3"]
+[ext_resource type="Texture2D" uid="uid://nwrnsulwj77k" path="res://imagens_pre_convert/agua_normal.png" id="4_un17g"]
+[ext_resource type="Texture2D" uid="uid://chphtx7rkgglj" path="res://imagens_pre_convert/agua_pressed.png" id="5_ybm85"]
+[ext_resource type="Texture2D" uid="uid://dwi3upen2adv3" path="res://imagens_pre_convert/agua_hover.png" id="6_hj6ff"]
+[ext_resource type="Texture2D" uid="uid://bpc14kmhk6j1c" path="res://botoesHeader/Temperatura.png" id="6_riall"]
+[ext_resource type="Texture2D" uid="uid://vft0xme8ojm8" path="res://botoesHeader/Umidade.png" id="7_qeov1"]
+[ext_resource type="Texture2D" uid="uid://4eokrgc3tl3p" path="res://imagens_pre_convert/coracao_disabled.png" id="7_sriv3"]
+[ext_resource type="Texture2D" uid="uid://djjtqxx1n5yp8" path="res://imagens_pre_convert/agua_disabled.png" id="8_emmyk"]
+[ext_resource type="Texture2D" uid="uid://c5qd2t4lbe7oa" path="res://imagens_pre_convert/coracao_normal.png" id="8_mtqun"]
+[ext_resource type="Texture2D" uid="uid://ccgbsv5jxxqo" path="res://botoesHeader/Umidade_solo.png" id="8_wrkre"]
+[ext_resource type="Texture2D" uid="uid://dmvy23aal66bh" path="res://botoesHeader/Luminosidade.png" id="9_7q343"]
+[ext_resource type="Texture2D" uid="uid://b3bnv4nsow4rq" path="res://imagens_pre_convert/coracao_pressed.png" id="9_32fkw"]
+[ext_resource type="Texture2D" uid="uid://ce5eawinj0sjt" path="res://imagens_pre_convert/coracao_hover.png" id="10_74luf"]
+[ext_resource type="Texture2D" uid="uid://3jqjgn2a84u3" path="res://botoesHeader/Pontos.png" id="10_das7h"]
+[ext_resource type="Texture2D" uid="uid://c3ibu07832xu8" path="res://botoesHeader/Fundo.png" id="11_f0jk1"]
+[ext_resource type="Texture2D" uid="uid://cjmtdw1yslbcx" path="res://imagens_pre_convert/microfone_normal.png" id="11_pb03a"]
+[ext_resource type="Script" path="res://LabelPontos.gd" id="11_qrhym"]
+[ext_resource type="Texture2D" uid="uid://c5fw6hb8l827j" path="res://botoesHeader/Roupa.png" id="12_7jkk0"]
+[ext_resource type="Texture2D" uid="uid://bav5j6sfser0t" path="res://imagens_pre_convert/microfone_pressed.png" id="12_b12eu"]
+[ext_resource type="Texture2D" uid="uid://bcm0o5q2dur3y" path="res://imagens_pre_convert/microfone_hover.png" id="13_i6ktl"]
+[ext_resource type="Texture2D" uid="uid://dalqow7cjolmv" path="res://imagens_pre_convert/microfone_disabled.png" id="14_qacap"]
+[ext_resource type="Texture2D" uid="uid://ckfyjgkuemxi0" path="res://imagens_pre_convert/redstone_ligado_normal.png" id="15_87v3h"]
+[ext_resource type="Texture2D" uid="uid://cm7qdlbu8mi8b" path="res://imagens_pre_convert/redstone_off.png" id="16_b4nbh"]
+[ext_resource type="Texture2D" uid="uid://b11w8uif2ycik" path="res://imagens_pre_convert/redstone_ligado_pressed.png" id="16_i32af"]
+[ext_resource type="Texture2D" uid="uid://gnq22kx1m4ol" path="res://imagens_pre_convert/redstone_ligado_hover.png" id="17_o63at"]
+[ext_resource type="Texture2D" uid="uid://dmwoy2xx4ay7" path="res://imagens_pre_convert/redstone_off_pressed.png" id="17_roqd7"]
+[ext_resource type="Texture2D" uid="uid://b8b57m77k5kuf" path="res://expresoes/facial_01.png" id="17_uua8j"]
+[ext_resource type="Texture2D" uid="uid://cf0eik132uwxu" path="res://imagens_pre_convert/redstone_off_hover.png" id="18_b5du1"]
+[ext_resource type="Texture2D" uid="uid://bvh5ihgholbyh" path="res://imagens_pre_convert/redstone_ligado_disabled.png" id="18_sejdn"]
+[ext_resource type="Texture2D" uid="uid://3ga41jv3syla" path="res://imagens_pre_convert/redstone_off_disabled.png" id="19_fphej"]
+[ext_resource type="AudioStream" uid="uid://cvwhwsmfprdmy" path="res://audios/zhonya.mp3" id="24_3rhud"]
+[ext_resource type="AudioStream" uid="uid://dwek2t210cidr" path="res://audios/whatislove.mp3" id="25_fsv34"]
+[ext_resource type="AudioStream" uid="uid://dhhmi25lu7qf4" path="res://audios/ultra_instinct.mp3" id="26_aqwbe"]
+[ext_resource type="AudioStream" uid="uid://yk67oy1phn62" path="res://audios/blue_off.mp3" id="27_yti6b"]
+[ext_resource type="AudioStream" uid="uid://q008n8bhti2r" path="res://click.wav" id="28_3ylk4"]
+[ext_resource type="PackedScene" uid="uid://t23jqu65j6c7" path="res://shop.tscn" id="41_atk82"]
+
+[node name="MenuOficial" type="Control"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_udbbb")
+
+[node name="Fundo" type="TextureRect" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fbkjw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -120
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture = ExtResource("3_ouy7c")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="id_planta" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemIdPlanta" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/id_planta"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_7s551")
+
+[node name="LabelIdPlanta" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/id_planta"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="temperatura" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemTemperatura" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/temperatura"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_riall")
+
+[node name="LabelTemperatura" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/temperatura"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "35c"
+
+[node name="umidade" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemUmidade" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/umidade"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_qeov1")
+
+[node name="LabelUmidade" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/umidade"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "98%"
+
+[node name="umidade_solo" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemUmidadeSolo" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/umidade_solo"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_wrkre")
+
+[node name="LabelUmidadeSolo" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/umidade_solo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "75%"
+
+[node name="luminosidade" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemLuminosidade" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/luminosidade"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_7q343")
+
+[node name="LabelLuminosidade" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/luminosidade"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "100%"
+
+[node name="pontos" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemPontos" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/pontos"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_das7h")
+
+[node name="LabelPontos" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/pontos"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "32000"
+script = ExtResource("11_qrhym")
+
+[node name="fundo" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemFundo" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/fundo"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_f0jk1")
+
+[node name="LabelFundo" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/fundo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "2"
+
+[node name="roupa" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="ImagemRoupa" type="TextureRect" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/roupa"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_7jkk0")
+
+[node name="LabelRoupa" type="Label" parent="VBoxContainer/MarginContainer2/TextureRect/HBoxContainer/roupa"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fh78g")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -110
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = -130
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource("3_hkde8")
+texture_disabled = ExtResource("4_lexi3")
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(450, 475)
+layout_mode = 2
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/BoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("1_7yb57")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="VBoxContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+size_flags_vertical = 0
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/BoxContainer/BoxContainer/AspectRatioContainer2"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="VBoxContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(450, 450)
+layout_mode = 2
+size_flags_vertical = 0
+stretch_mode = 1
+
+[node name="CarinhaImagem" type="TextureRect" parent="VBoxContainer/BoxContainer/BoxContainer/AspectRatioContainer3"]
+layout_mode = 2
+texture = ExtResource("17_uua8j")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextoInfo" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(750, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_fh78g")
+theme_override_font_sizes/normal_font_size = 45
+text = "Quer saber as novidades? Clique no balde"
+scroll_active = false
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="BaldeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_un17g")
+texture_pressed = ExtResource("5_ybm85")
+texture_hover = ExtResource("6_hj6ff")
+texture_disabled = ExtResource("8_emmyk")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer/HBoxContainer/BaldeButton"]
+
+[node name="HTTPRequestVitor" type="HTTPRequest" parent="VBoxContainer/HBoxContainer/BaldeButton"]
+
+[node name="CoracaoButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_mtqun")
+texture_pressed = ExtResource("9_32fkw")
+texture_hover = ExtResource("10_74luf")
+texture_disabled = ExtResource("7_sriv3")
+
+[node name="MicrofoneButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_pb03a")
+texture_pressed = ExtResource("12_b12eu")
+texture_hover = ExtResource("13_i6ktl")
+texture_disabled = ExtResource("14_qacap")
+
+[node name="RedstoneOnButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("15_87v3h")
+texture_pressed = ExtResource("16_i32af")
+texture_hover = ExtResource("17_o63at")
+texture_disabled = ExtResource("18_sejdn")
+
+[node name="RedstoneOffButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_b4nbh")
+texture_pressed = ExtResource("17_roqd7")
+texture_hover = ExtResource("18_b5du1")
+texture_disabled = ExtResource("19_fphej")
+
+[node name="AudioZhonyas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_3rhud")
+
+[node name="AudioLove" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_fsv34")
+
+[node name="AudioInstinct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_aqwbe")
+
+[node name="AudioBlue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_yti6b")
+
+[node name="AudioClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_3ylk4")
+
+[node name="Shop" parent="." instance=ExtResource("41_atk82")]
+visible = false
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BaldeButton" to="." method="_on_balde_button_pressed"]
+[connection signal="request_completed" from="VBoxContainer/HBoxContainer/BaldeButton/HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="VBoxContainer/HBoxContainer/BaldeButton/HTTPRequestVitor" to="." method="_on_http_request_vitor_request_completed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CoracaoButton" to="." method="_on_coracao_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MicrofoneButton" to="." method="_on_microfone_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RedstoneOnButton" to="." method="_on_redstone_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RedstoneOffButton" to="." method="_on_redstone_off_button_pressed"]
