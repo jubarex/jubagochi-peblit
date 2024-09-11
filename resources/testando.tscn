@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://4o4lsxn3vj18"]
+
+[ext_resource type="Script" path="res://resources/TestandoSave.gd" id="1_b66a3"]
+
+[node name="Testando" type="Node"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_b66a3")
+
+[node name="Load" type="Button" parent="."]
+offset_left = 608.0
+offset_top = 373.0
+offset_right = 703.0
+offset_bottom = 430.0
+theme_override_font_sizes/font_size = 35
+text = "Load"
+
+[node name="Save" type="Button" parent="."]
+offset_left = 791.0
+offset_top = 373.0
+offset_right = 886.0
+offset_bottom = 430.0
+theme_override_font_sizes/font_size = 35
+text = "Save"
+
+[node name="Label1" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 537.0
+offset_right = 638.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 35
+text = "Texto"
+horizontal_alignment = 1
+
+[node name="plus" type="Button" parent="Label1"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 117.0
+offset_right = 72.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 35
+text = "+
+"
+
+[node name="minus" type="Button" parent="Label1"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 117.0
+offset_right = 180.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 35
+text = "-
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 703.0
+offset_top = 537.0
+offset_right = 876.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 35
+text = "Texto"
+horizontal_alignment = 1
+
+[node name="plus" type="Button" parent="Label2"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 117.0
+offset_right = 72.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 35
+text = "+
+"
+
+[node name="minus" type="Button" parent="Label2"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 117.0
+offset_right = 180.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 35
+text = "-
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 945.0
+offset_top = 537.0
+offset_right = 1118.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 35
+text = "Texto"
+horizontal_alignment = 1
+
+[node name="plus" type="Button" parent="Label3"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 117.0
+offset_right = 72.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 35
+text = "+
+"
+
+[node name="minus" type="Button" parent="Label3"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 117.0
+offset_right = 180.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 35
+text = "-
+"
+
+[connection signal="pressed" from="Load" to="Node" method="_on_load_pressed"]
+[connection signal="pressed" from="Save" to="Node" method="_on_save_pressed"]
+[connection signal="pressed" from="Label1/plus" to="Node" method="_on_plus1_pressed"]
+[connection signal="pressed" from="Label1/minus" to="Node" method="_on_minus1_pressed"]
+[connection signal="pressed" from="Label2/plus" to="Node" method="_on_plus2_pressed"]
+[connection signal="pressed" from="Label2/minus" to="Node" method="_on_minus2_pressed"]
+[connection signal="pressed" from="Label3/plus" to="Node" method="_on_plus3_pressed"]
+[connection signal="pressed" from="Label3/minus" to="Node" method="_on_minus3_pressed"]

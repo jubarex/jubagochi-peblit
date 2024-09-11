@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvg2q8jbo47e"]
+
+[ext_resource type="Script" path="res://Games/Flappy/Scenes/pipe_spawner.gd" id="1_qgco6"]
+
+[node name="PipeSpawner" type="Node"]
+script = ExtResource("1_qgco6")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0

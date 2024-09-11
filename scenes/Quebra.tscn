@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcv6ypwyqo7tc"]
+
+[ext_resource type="Texture2D" uid="uid://cjx5mcpri8sgd" path="res://bgs/puzzle.png" id="1_wjppb"]
+[ext_resource type="Script" path="res://scenes/VoltarMenu.gd" id="2_lg154"]
+
+[node name="Quebra" type="Node"]
+
+[node name="Puzzle" type="Sprite2D" parent="."]
+position = Vector2(964, 540)
+scale = Vector2(1.59333, 1.71975)
+texture = ExtResource("1_wjppb")
+
+[node name="VoltarMenu" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 23.0
+offset_right = 468.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 48
+text = "VOLTAR AO MENU"
+script = ExtResource("2_lg154")
+
+[connection signal="pressed" from="VoltarMenu" to="VoltarMenu" method="_on_pressed_voltar_menu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cosl53b4v43f6"]
+[gd_scene load_steps=45 format=3 uid="uid://cosl53b4v43f6"]
 
 [ext_resource type="Texture2D" uid="uid://dsjn1jiqamj3b" path="res://texturas/Peblit.png" id="1_7yb57"]
 [ext_resource type="Texture2D" uid="uid://h844hmkd21bh" path="res://imagens_pre_convert/PITCH_ Peblit.png" id="1_fbkjw"]
@@ -43,6 +43,7 @@
 [ext_resource type="AudioStream" uid="uid://yk67oy1phn62" path="res://audios/blue_off.mp3" id="27_yti6b"]
 [ext_resource type="AudioStream" uid="uid://q008n8bhti2r" path="res://click.wav" id="28_3ylk4"]
 [ext_resource type="PackedScene" uid="uid://t23jqu65j6c7" path="res://shop.tscn" id="41_atk82"]
+[ext_resource type="PackedScene" uid="uid://c3ugq5q5pks6i" path="res://menu_minijogos.tscn" id="44_m14i5"]
 
 [node name="MenuOficial" type="Control"]
 texture_filter = 3
@@ -277,12 +278,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_fh78g")
 theme_override_font_sizes/normal_font_size = 45
 text = "Quer saber as novidades? Clique no balde"
@@ -350,6 +351,9 @@ stream = ExtResource("27_yti6b")
 stream = ExtResource("28_3ylk4")
 
 [node name="Shop" parent="." instance=ExtResource("41_atk82")]
+visible = false
+
+[node name="menu_minijogos" parent="." instance=ExtResource("44_m14i5")]
 visible = false
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BaldeButton" to="." method="_on_balde_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce8bai1587dce"]
+
+[ext_resource type="Texture2D" uid="uid://ch6ccsr7bfd7g" path="res://bgs/flappy.jpg" id="1_vobkn"]
+[ext_resource type="Script" path="res://scenes/VoltarMenu.gd" id="2_nfirl"]
+
+[node name="Flappy" type="Node"]
+
+[node name="Flappy" type="Sprite2D" parent="."]
+position = Vector2(960, 536.5)
+scale = Vector2(2.405, 2.6925)
+texture = ExtResource("1_vobkn")
+
+[node name="VoltarMenu" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 23.0
+offset_right = 468.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 48
+text = "VOLTAR AO MENU"
+script = ExtResource("2_nfirl")
+
+[connection signal="pressed" from="VoltarMenu" to="VoltarMenu" method="_on_pressed_voltar_menu"]

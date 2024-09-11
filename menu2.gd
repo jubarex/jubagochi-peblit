@@ -35,7 +35,7 @@ func _ready():
 	#Supabase.auth.connect("signed_in", Callable(self, "_on_signed_in"))
 	#Supabase.auth.connect("sign_in_failed", Callable(self, "_on_sign_in_failed"))
 	#sign_in()
-	requestVitor()
+	#requestVitor()
 	
 	
 
@@ -75,6 +75,8 @@ func _on_balde_button_pressed():
 
 func _on_coracao_button_pressed():
 	audioLove.play()
+	get_node('menu_minijogos').visible = true
+	get_node('menu_minijogos/AnimationPlayer').play('TransIn')
 	pass # Replace with function body.
 
 
@@ -88,9 +90,9 @@ func _on_microfone_button_pressed():
 func _on_redstone_on_button_pressed():
 	audio_click.play()
 	var numAleatorio = rng.randf_range(0, 100.0)
-	if(numAleatorio >= 80):
+	if(numAleatorio <= 100):
 		audioBlue.play()
-		await get_tree().create_timer(2).timeout
+		#await get_tree().create_timer(2).timeout
 		get_tree().quit()
 	else:
 		redstone_off_button.visible = true
@@ -174,7 +176,7 @@ func _on_http_request_vitor_request_completed(result, response_code, headers, bo
 	json.parse(body.get_string_from_utf8())
 	var response = json.get_data()
 	print(response)
-	botarTela(response)
+	#botarTela(response)
 	texture_button.disabled = false
 	#botarTela(result)
 	pass # Replace with function body.

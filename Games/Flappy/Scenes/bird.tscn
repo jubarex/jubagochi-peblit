@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://by5fhbwsnjo5d"]
+
+[ext_resource type="Script" path="res://Games/Flappy/Scenes/bird.gd" id="1_kcs8b"]
+[ext_resource type="Texture2D" uid="uid://bjn7mqbj3rrm" path="res://Games/Flappy/Assets/yellowbird-midflap.png" id="1_nv68f"]
+[ext_resource type="Texture2D" uid="uid://bxetx2w3gs4gr" path="res://Games/Flappy/Assets/yellowbird-downflap.png" id="3_pvkpp"]
+[ext_resource type="Texture2D" uid="uid://cfmtmqos4atil" path="res://Games/Flappy/Assets/yellowbird-upflap.png" id="4_1ihco"]
+[ext_resource type="AudioStream" uid="uid://b2yu8jvrl5yt3" path="res://Games/Flappy/sons/jump.wav" id="5_o8b06"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fftb6"]
+radius = 11.0
+height = 32.0
+
+[sub_resource type="Animation" id="Animation_1iuec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_nv68f")]
+}
+
+[sub_resource type="Animation" id="Animation_tucge"]
+resource_name = "flap_wings"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_pvkpp"), ExtResource("1_nv68f"), ExtResource("4_1ihco")]
+}
+
+[sub_resource type="Animation" id="Animation_r0h5w"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57iwi"]
+_data = {
+"RESET": SubResource("Animation_1iuec"),
+"flap_wings": SubResource("Animation_tucge"),
+"idle": SubResource("Animation_r0h5w")
+}
+
+[node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_kcs8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("1_nv68f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fftb6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_57iwi")
+}
+
+[node name="SomPulo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o8b06")
+volume_db = -22.0

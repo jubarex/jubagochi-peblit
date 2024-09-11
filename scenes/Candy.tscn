@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://csabx30vayl1v"]
+
+[ext_resource type="Texture2D" uid="uid://bw8i1gvs8xlmm" path="res://bgs/candy.jpg" id="1_3s3h3"]
+[ext_resource type="Script" path="res://scenes/VoltarMenu.gd" id="2_wberv"]
+
+[node name="Candy" type="Node"]
+
+[node name="Candy" type="Sprite2D" parent="."]
+position = Vector2(960, 544)
+scale = Vector2(1.4875, 1.48889)
+texture = ExtResource("1_3s3h3")
+
+[node name="VoltarMenu" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 23.0
+offset_right = 468.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 48
+text = "VOLTAR AO MENU"
+script = ExtResource("2_wberv")
+
+[connection signal="pressed" from="VoltarMenu" to="VoltarMenu" method="_on_pressed_voltar_menu"]

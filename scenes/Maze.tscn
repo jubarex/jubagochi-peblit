@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bedl8c3rio6bj"]
+
+[ext_resource type="Texture2D" uid="uid://c2dfd2sgruoef" path="res://bgs/maze.jpg" id="1_if8yq"]
+[ext_resource type="Script" path="res://scenes/VoltarMenu.gd" id="2_cgi53"]
+
+[node name="Maze" type="Node"]
+
+[node name="Maze" type="Sprite2D" parent="."]
+position = Vector2(962, 548.5)
+scale = Vector2(1.2025, 1.18333)
+texture = ExtResource("1_if8yq")
+
+[node name="VoltarMenu" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 23.0
+offset_right = 468.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 48
+text = "VOLTAR AO MENU"
+script = ExtResource("2_cgi53")
+
+[connection signal="pressed" from="VoltarMenu" to="VoltarMenu" method="_on_pressed_voltar_menu"]

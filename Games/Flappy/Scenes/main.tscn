@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjfcwbxvtk31p"]
+
+[ext_resource type="PackedScene" uid="uid://by5fhbwsnjo5d" path="res://Games/Flappy/Scenes/bird.tscn" id="1_8bahd"]
+[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Games/Flappy/Assets/background-day.png" id="1_a8ni6"]
+[ext_resource type="Script" path="res://Games/Flappy/Scenes/game_manager.gd" id="1_jn53w"]
+[ext_resource type="PackedScene" uid="uid://exf4jtwoa0g2" path="res://Games/Flappy/Scenes/ground.tscn" id="3_7luph"]
+[ext_resource type="PackedScene" uid="uid://bvg2q8jbo47e" path="res://Games/Flappy/Scenes/PipeSpawner.tscn" id="4_mqa1v"]
+[ext_resource type="PackedScene" uid="uid://d0wvphw4dqeqg" path="res://Games/Flappy/Scenes/Fade.tscn" id="6_1atk0"]
+[ext_resource type="PackedScene" uid="uid://bhe3h60l0eex4" path="res://Games/Flappy/Scenes/UI.tscn" id="7_u230h"]
+[ext_resource type="AudioStream" uid="uid://dl77q3hnpmw46" path="res://Games/Flappy/sons/L.mp3" id="8_f50xv"]
+[ext_resource type="AudioStream" uid="uid://sr47hii85k48" path="res://Games/Flappy/sons/G.mp3" id="9_erj1t"]
+[ext_resource type="AudioStream" uid="uid://bqc1masphvy1s" path="res://Games/Flappy/sons/pickupCoin.wav" id="10_r0evm"]
+
+[node name="Main" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_jn53w")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2.07639, 2.11328)
+texture = ExtResource("1_a8ni6")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(-630.5, 0)
+scale = Vector2(2.30903, 2.11328)
+texture = ExtResource("1_a8ni6")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(631, 0)
+scale = Vector2(2.30903, 2.11328)
+texture = ExtResource("1_a8ni6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Ground" parent="." instance=ExtResource("3_7luph")]
+position = Vector2(0, 486)
+scale = Vector2(1, 0.5)
+
+[node name="PipeSpawner" parent="." instance=ExtResource("4_mqa1v")]
+
+[node name="UI" parent="." instance=ExtResource("7_u230h")]
+
+[node name="Bird" parent="." instance=ExtResource("1_8bahd")]
+
+[node name="Fade" parent="." instance=ExtResource("6_1atk0")]
+
+[node name="SoundtrackPrincipal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_f50xv")
+parameters/looping = true
+
+[node name="SomMorte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_erj1t")
+parameters/looping = true
+
+[node name="SomPonto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_r0evm")
+
+[connection signal="sair" from="UI" to="GameManager" method="_on_ui_sair"]

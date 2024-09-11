@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5h8y036ad67"]
+
+[ext_resource type="Texture2D" uid="uid://b2gocn2f0ysws" path="res://bgs/snake.png" id="1_iej34"]
+[ext_resource type="Script" path="res://scenes/VoltarMenu.gd" id="2_finsf"]
+
+[node name="Snake" type="Node"]
+
+[node name="Snake" type="Sprite2D" parent="."]
+position = Vector2(960, 543.25)
+scale = Vector2(3.66412, 3.689)
+texture = ExtResource("1_iej34")
+
+[node name="VoltarMenu" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 23.0
+offset_right = 468.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 48
+text = "VOLTAR AO MENU"
+script = ExtResource("2_finsf")
+
+[connection signal="pressed" from="VoltarMenu" to="VoltarMenu" method="_on_pressed_voltar_menu"]
