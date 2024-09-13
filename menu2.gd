@@ -44,6 +44,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	label_pontos.text = "R$ %d" % Global.playerData.gold
 	pass 
 
 
@@ -142,7 +143,7 @@ func _on_selected(result : Array):
 	label_pontos.text = "R$" + str(result[0].pontos) + "" 
 	label_fundo.text = "" + str(result[0].id_fundo_atual) + "" 
 	label_roupa.text = "" + str(result[0].id_roupa_atual) + "" 
-	Global.gold = result[0].pontos
+	Global.playerData.gold = result[0].pontos
 	
 func botarTela(result):
 	#print(result)
@@ -154,7 +155,7 @@ func botarTela(result):
 	label_pontos.text = "R$" + str(result.pontos) + "" 
 	label_fundo.text = "" + str(result.idFundoAtual) + "" 
 	label_roupa.text = "" + str(result.idRoupaAtual) + "" 
-	Global.gold = result.pontos
+	Global.playerData.gold = result.pontos
 	mudarTextura(int(result.temperatura), int(result.umidade), int(result.umidadeSolo))
 	
 

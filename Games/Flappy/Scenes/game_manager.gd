@@ -30,7 +30,8 @@ func on_game_started():
 
 func end_game():
 	if fade != null:	
-		Global.gold += points
+		Global.playerData.addGold(points)
+		Global.save()
 		som_morte.play()
 		fade.play()
 	soundtrack_principal.stop()

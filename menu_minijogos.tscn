@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3ugq5q5pks6i"]
+[gd_scene load_steps=9 format=3 uid="uid://c3ugq5q5pks6i"]
 
 [ext_resource type="Script" path="res://menu_minijogos.gd" id="1_0f5mc"]
 [ext_resource type="Theme" uid="uid://d1cnbnfmrwwxq" path="res://Jubafault.tres" id="2_g6cho"]
+[ext_resource type="AudioStream" uid="uid://bp42rpwk2nywv" path="res://audios/Modern9.mp3" id="3_8ukpn"]
+[ext_resource type="AudioStream" uid="uid://xco1rcontbvu" path="res://audios/Wood Block3.mp3" id="4_78ax6"]
+[ext_resource type="AudioStream" uid="uid://ckijsql783mku" path="res://audios/Modern1.mp3" id="5_c2jo1"]
 
 [sub_resource type="Animation" id="Animation_0bolb"]
 resource_name = "TransIn"
@@ -175,11 +178,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Pássaro"
 
-[node name="Score" type="Label" parent="ControlScore/HBoxContainer/VBoxPassaro"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "1. 0 pontos"
-
 [node name="VBoxCandy" type="VBoxContainer" parent="ControlScore/HBoxContainer"]
 layout_mode = 2
 
@@ -220,6 +218,15 @@ text = "Puzzle
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "1. 0 pontos"
+
+[node name="AudioErro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8ukpn")
+
+[node name="AudioSucesso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_78ax6")
+
+[node name="AudioNormal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c2jo1")
 
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]
 [connection signal="pressed" from="VerPontuacao" to="." method="_on_ver_pontuacao_pressed"]

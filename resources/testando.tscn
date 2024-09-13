@@ -110,6 +110,38 @@ theme_override_font_sizes/font_size = 35
 text = "-
 "
 
+[node name="tituloG1" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 69.0
+offset_right = 637.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 48
+text = "Global"
+
+[node name="Gold" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 201.0
+offset_right = 637.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="tituloG2" type="Label" parent="."]
+offset_left = 1244.0
+offset_top = 69.0
+offset_right = 1416.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 48
+text = "Global Player Data"
+
+[node name="GoldPD" type="Label" parent="."]
+offset_left = 1298.0
+offset_top = 201.0
+offset_right = 1470.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+
 [connection signal="pressed" from="Load" to="Node" method="_on_load_pressed"]
 [connection signal="pressed" from="Save" to="Node" method="_on_save_pressed"]
 [connection signal="pressed" from="Label1/plus" to="Node" method="_on_plus1_pressed"]

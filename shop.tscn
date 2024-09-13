@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://t23jqu65j6c7"]
+[gd_scene load_steps=65 format=3 uid="uid://t23jqu65j6c7"]
 
 [ext_resource type="Script" path="res://shop.gd" id="1_5xqex"]
 [ext_resource type="Theme" uid="uid://d1cnbnfmrwwxq" path="res://Jubafault.tres" id="1_tp7ur"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bo11ehc0s1bsw" path="res://ansprites/Bananas.png" id="4_3c3jq"]
 [ext_resource type="Texture2D" uid="uid://dqd3i8h8mtwfv" path="res://ansprites/Orange.png" id="5_5kyqb"]
 [ext_resource type="Script" path="res://GoldLoja.gd" id="6_3kggt"]
+[ext_resource type="AudioStream" uid="uid://bp42rpwk2nywv" path="res://audios/Modern9.mp3" id="7_wdkpj"]
+[ext_resource type="AudioStream" uid="uid://xco1rcontbvu" path="res://audios/Wood Block3.mp3" id="8_gno22"]
+[ext_resource type="AudioStream" uid="uid://ckijsql783mku" path="res://audios/Modern1.mp3" id="9_f1hd4"]
 
 [sub_resource type="Animation" id="Animation_0bolb"]
 resource_name = "TransIn"
@@ -517,6 +520,15 @@ text = "2525"
 script = ExtResource("6_3kggt")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="AudioErro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wdkpj")
+
+[node name="AudioSucesso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gno22")
+
+[node name="AudioNormal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_f1hd4")
 
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]
 [connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]

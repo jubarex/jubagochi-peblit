@@ -1,7 +1,9 @@
 extends Node
 
+var save_file_path ="user://save/"
+var save_file_name = "PlayerSave.tres"
+var playerData = PlayerData.new()
 
-var gold = 0
 
 var items = {
 	0: {
@@ -33,3 +35,36 @@ var inventory = {
 		"Count": 1
 	}
 }
+
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("save"):
+		save()
+	if Input.is_action_just_pressed("load"):
+		load_data()
+
+func _ready():
+	verify_save_directory(save_file_path)
+	load_data()
+
+	
+func on_start_load():
+	#self.gold = playerData.gold
+	pass
+	
+
+func verify_save_directory(path: String):
+	DirAccess.make_dir_absolute(path)
+	
+
+func load_data():
+	playerData = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	on_start_load()
+	print("loaded")
+	
+func save():
+	ResourceSaver.save(playerData, save_file_path + save_file_name)
+	print("save")
+	
+	

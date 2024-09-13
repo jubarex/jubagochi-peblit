@@ -3,6 +3,11 @@ extends CanvasLayer
 var currItem = 0
 var select = 0
 
+@onready var audio_erro: AudioStreamPlayer = $AudioErro
+@onready var audio_sucesso: AudioStreamPlayer = $AudioSucesso
+@onready var audio_normal: AudioStreamPlayer = $AudioNormal
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	switchItem(select)
@@ -15,6 +20,7 @@ func _process(delta):
 
 
 func _on_fechar_pressed():
+	cliqueBotao()
 	get_node("AnimationPlayer").play("TransOut")
 	pass # Replace with function body.
 
@@ -29,6 +35,7 @@ func switchItem(select):
 			
 
 func _on_next_pressed():
+	cliqueBotao()
 	switchItem(currItem+1)
 	pass # Replace with function body.
 
@@ -37,6 +44,7 @@ func _on_next_pressed():
 
 
 func _on_prev_pressed():
+	cliqueBotao()
 	switchItem(currItem-1)
 	pass # Replace with function body.
 
@@ -62,7 +70,8 @@ func definirLabelRF(fundo, roupa):
 	label_roupa.text = "" + str(roupa)
 
 func _on_buy_pressed():
-	if Global.gold >= Global.items[currItem]["Cost"]:
+	if Global.playerData.gold >= Global.items[currItem]["Cost"]:
+		compraSucesso()
 		#enviarDados(currItem, currItem)
 		#var instance = MenuPrincipal.new()
 		definirLabelRF(str(currItem), str(currItem))
@@ -83,9 +92,11 @@ func _on_buy_pressed():
 				hasItem = true
 		if hasItem == false:
 			Global.inventory[Global.inventory.size()] = Global.items[currItem]
-			Global.gold -= Global.items[currItem]["Cost"]
+			Global.playerData.gold -= Global.items[currItem]["Cost"]
 			Global.inventory[Global.inventory.size()-1]["Count"] = 1
 		print(Global.inventory)
+	else: 
+		erroNaCompra()
 
 # Criar lógica para ter mais de uma categoria na loja
 # Criar lógica pra ver se o item ta no inventário, se estiver mudar o texto pra selecionar ao invés de comprar
@@ -100,7 +111,15 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	
 	
 	
+func erroNaCompra() -> void:
+	audio_erro.play()
 	
 	
+func compraSucesso() -> void:
+	audio_sucesso.play()
+	
+	
+func cliqueBotao() -> void:
+	audio_normal.play()
 	
 	
