@@ -31,6 +31,7 @@ func on_game_started():
 func end_game():
 	if fade != null:	
 		Global.playerData.addGold(points)
+		Global.playerData.addScoreFlappy(points)
 		Global.save()
 		som_morte.play()
 		fade.play()
