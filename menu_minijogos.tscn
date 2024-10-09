@@ -120,7 +120,7 @@ offset_top = 332.0
 offset_right = 1687.0
 offset_bottom = 436.0
 theme_override_font_sizes/font_size = 70
-text = "candy crush"
+text = "color switch"
 
 [node name="QuebraCabeca" type="Button" parent="Control"]
 layout_mode = 0
