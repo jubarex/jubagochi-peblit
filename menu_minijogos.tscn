@@ -97,14 +97,15 @@ autowrap_mode = 3
 
 [node name="Passaro" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 808.0
-offset_top = 468.0
-offset_right = 1082.0
-offset_bottom = 572.0
+offset_left = 160.0
+offset_top = 324.0
+offset_right = 695.0
+offset_bottom = 428.0
 theme_override_font_sizes/font_size = 70
-text = "pássaro"
+text = "Pássaro Voador"
 
 [node name="Cobrinha" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 280.0
 offset_top = 332.0
@@ -115,14 +116,15 @@ text = "cobrinha"
 
 [node name="CandyCrush" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 1272.0
-offset_top = 332.0
-offset_right = 1687.0
-offset_bottom = 436.0
+offset_left = 184.0
+offset_top = 620.0
+offset_right = 652.0
+offset_bottom = 724.0
 theme_override_font_sizes/font_size = 70
-text = "color switch"
+text = "Alien Espacial"
 
 [node name="QuebraCabeca" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 184.0
 offset_top = 700.0
@@ -133,6 +135,7 @@ text = "puzzle
 "
 
 [node name="Labirinto" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 1232.0
 offset_top = 708.0
@@ -157,6 +160,7 @@ offset_bottom = 996.0
 theme_override_constants/separation = 150
 
 [node name="VBoxCobra" type="VBoxContainer" parent="ControlScore/HBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Titulo" type="Label" parent="ControlScore/HBoxContainer/VBoxCobra"]
@@ -176,7 +180,7 @@ layout_mode = 2
 [node name="Titulo" type="Label" parent="ControlScore/HBoxContainer/VBoxPassaro"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Pássaro"
+text = "Pássaro Voador"
 
 [node name="VBoxCandy" type="VBoxContainer" parent="ControlScore/HBoxContainer"]
 layout_mode = 2
@@ -184,14 +188,10 @@ layout_mode = 2
 [node name="Titulo" type="Label" parent="ControlScore/HBoxContainer/VBoxCandy"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Candy Crush"
-
-[node name="Score" type="Label" parent="ControlScore/HBoxContainer/VBoxCandy"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "1. 0 pontos"
+text = "Alien Espacial"
 
 [node name="VBoxLabirinto" type="VBoxContainer" parent="ControlScore/HBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Titulo" type="Label" parent="ControlScore/HBoxContainer/VBoxLabirinto"]
@@ -206,6 +206,7 @@ text = "1. 0 pontos
 "
 
 [node name="VBoxQuebraCabeca" type="VBoxContainer" parent="ControlScore/HBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Titulo" type="Label" parent="ControlScore/HBoxContainer/VBoxQuebraCabeca"]

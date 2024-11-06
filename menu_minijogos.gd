@@ -19,7 +19,7 @@ func _on_fechar_pressed():
 
 func _ready():
 	mostrarScoreFlappy()
-
+	mostrarScoreEstrela()
 
 func _on_passaro_pressed():
 	audio_sucesso.play()
@@ -58,6 +58,7 @@ func _on_ver_pontuacao_pressed():
 	pass # Replace with function body.
 
 @onready var v_box_passaro: VBoxContainer = $ControlScore/HBoxContainer/VBoxPassaro
+@onready var v_box_candy: VBoxContainer = $ControlScore/HBoxContainer/VBoxCandy
 
 
 func mostrarScoreFlappy():
@@ -69,3 +70,12 @@ func mostrarScoreFlappy():
 		scoreLabel.add_theme_font_size_override("font_size", 38)  
 		v_box_passaro.add_child(scoreLabel)
 		
+		
+func mostrarScoreEstrela():
+	for i in Global.playerData.ScoresEstrela.size():
+		var score = Global.playerData.ScoresEstrela[i]
+		var scoreLabel: Label = Label.new() 
+		#scoreLabel.
+		scoreLabel.text = str(i+1) + ". " + str(score) +" pontos"
+		scoreLabel.add_theme_font_size_override("font_size", 38)  
+		v_box_candy.add_child(scoreLabel)
